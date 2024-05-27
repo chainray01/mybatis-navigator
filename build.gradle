@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+
+    mavenLocal()
+    maven { url=uri("https://maven.aliyun.com/repository/public") }
+        mavenCentral()
+    }
+
+}
+plugins {
+    id "org.jetbrains.intellij" version "1.17.3"
+}
+
+group = 'com.ray.idea.mybatis'
+version = '2024.1'
+
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    //implementation fileTree(dir: 'lib', includes: ['*jar'])
+    testImplementation group: 'junit', name: 'junit', version: '4.13.1'
+}
+buildPlugin {
+    buildSearchableOptions.enabled = false
+}
+intellij {
+    version.set("2024.1.1")
+    type.set("IU") // Target IDE Platform
+    pluginName.set("mybatis-navigator")
+    plugins=["DatabaseTools","com.intellij.spring","com.intellij.java"]
+    updateSinceUntilBuild=false
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

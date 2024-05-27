@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>com.ray.ideaplugin.mybatis-navigator</id>
+  <name>mybatis-navigator</name>
+  <version>1.0</version>
+  <vendor email="chain_ray@qq.com" url="http://www.chainray.com">chainray</vendor>
+
+  <description><![CDATA[
+      help deleloper navigator java interface and mybatis xml file<br>
+      <em>- add linemarker for mybatis xml file and java mapper file</em><br>
+      <em>- click the linemarker can navigator from java interface method to xml tag</em><br>
+      <em>- click the linemarker can navigator from   xml tag to java interface method </em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      2024-05-27 1.0<br>
+      <em>ok</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.xml</depends>
+  <depends>com.intellij.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+
+    <dom.fileMetaData implementation="com.ray.ideaplugin.dom.description.MapperFileDescription" rootTagName="mapper"/>
+    <projectService serviceImplementation="com.ray.ideaplugin.service.ProjectService"/>
+    <!-- Add your extensions here -->
+    <codeInsight.lineMarkerProvider language="JAVA" implementationClass="com.ray.ideaplugin.linemark.MapperInterfaceLineMarkerProvider"/>
+    <codeInsight.lineMarkerProvider language="XML" implementationClass="com.ray.ideaplugin.linemark.MapperXmlLineMarkerProvider"/>
+  </extensions>
+
+  <actions>
+
+  </actions>
+
+</idea-plugin>
