@@ -24,7 +24,7 @@ intellij {
     updateSinceUntilBuild=false
 }
 group = 'com.ray.ideaplugin'
-version = '2024.1.2'
+version = '2024.1.3'
 
 tasks {
     buildSearchableOptions {
