@@ -17,7 +17,7 @@ import com.intellij.util.xml.DomElement;
 import com.ray.ideaplugin.dom.model.IdDomElement;
 import com.ray.ideaplugin.dom.model.Mapper;
 import com.ray.ideaplugin.service.ProjectService;
-import com.ray.ideaplugin.util.Icons;
+import com.ray.ideaplugin.util.IconsConstants;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -38,7 +38,7 @@ public class MapperInterfaceLineMarkerProvider extends RelatedItemLineMarkerProv
 
     @Override
     public Icon getIcon() {
-        return Icons.SPRING_INJECTION_ICON;
+        return IconsConstants.SPRING_INJECTION_ICON;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class MapperInterfaceLineMarkerProvider extends RelatedItemLineMarkerProv
             if (!results.isEmpty()) {
                 List<XmlTag> tags = results.stream().map(DomElement::getXmlTag).collect(Collectors.toList());
                 NavigationGutterIconBuilder<PsiElement> builder = NavigationGutterIconBuilder
-                        .create(Icons.SPRING_INJECTION_ICON)
+                        .create(IconsConstants.SPRING_INJECTION_ICON)
                         .setAlignment(GutterIconRenderer.Alignment.CENTER)
                         .setTargets(tags)
                         .setTooltipTitle("mapper."+method.getName());
@@ -75,7 +75,7 @@ public class MapperInterfaceLineMarkerProvider extends RelatedItemLineMarkerProv
             if (!results.isEmpty()){
                 List<XmlTag> tags = results.stream().map(x -> x.getXmlTag()).collect(Collectors.toList());
                 NavigationGutterIconBuilder<PsiElement> builder = NavigationGutterIconBuilder
-                        .create(Icons.SPRING_INJECTION_ICON)
+                        .create(IconsConstants.SPRING_INJECTION_ICON)
                         .setAlignment(GutterIconRenderer.Alignment.CENTER)
                         .setTargets(tags)
                         .setTooltipTitle("goto mapper file");

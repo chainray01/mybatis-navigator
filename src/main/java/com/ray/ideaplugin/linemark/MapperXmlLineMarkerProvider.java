@@ -15,7 +15,7 @@ import com.intellij.util.xml.DomElement;
 import com.intellij.util.xml.DomUtil;
 
 import com.ray.ideaplugin.dom.model.IdDomElement;
-import com.ray.ideaplugin.util.Icons;
+import com.ray.ideaplugin.util.IconsConstants;
 import com.ray.ideaplugin.util.JavaUtils;
 import com.ray.ideaplugin.util.MapperUtils;
 import org.jetbrains.annotations.NotNull;
@@ -61,7 +61,7 @@ public class MapperXmlLineMarkerProvider implements LineMarkerProvider {
     }
 
     private Icon getIcon() {
-        return Icons.STATEMENT_LINE_MARKER_ICON;
+        return IconsConstants.STATEMENT_LINE_MARKER_ICON;
     }
 
     private boolean isMybatisMapperPsi(@NotNull PsiElement element) {

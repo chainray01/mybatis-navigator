@@ -8,15 +8,6 @@ repositories {
     mavenCentral()
 
 }
-group = 'com.ray.idea.mybatis'
-version = '2024.1'
-
-repositories {
-    mavenLocal()
-    maven { url=uri("https://maven.aliyun.com/repository/public") }
-    mavenCentral()
-
-}
 
 dependencies {
     testImplementation("junit:junit:4.13.2")
@@ -31,8 +22,10 @@ intellij {
     pluginName.set("mybatis-navigator")
     plugins=["DatabaseTools","Spring","com.intellij.java"]
     updateSinceUntilBuild=false
-
 }
+group = 'com.ray.ideaplugin'
+version = '2024.1.2'
+
 tasks {
     buildSearchableOptions {
         enabled = false
