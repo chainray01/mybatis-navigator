@@ -18,7 +18,7 @@
   </change-notes>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
+  <idea-version since-build="203"/>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -26,6 +26,7 @@
   <depends>com.intellij.modules.lang</depends>
   <depends>com.intellij.modules.xml</depends>
   <depends>com.intellij.java</depends>
+  <depends>com.intellij.spring</depends>
 
   <extensions defaultExtensionNs="com.intellij">
 
