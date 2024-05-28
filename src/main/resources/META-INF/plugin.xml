@@ -26,7 +26,6 @@
   <depends>com.intellij.modules.lang</depends>
   <depends>com.intellij.modules.xml</depends>
   <depends>com.intellij.java</depends>
-  <depends>com.intellij.spring</depends>
 
   <extensions defaultExtensionNs="com.intellij">
 

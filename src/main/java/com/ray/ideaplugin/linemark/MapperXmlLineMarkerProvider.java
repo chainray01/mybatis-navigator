@@ -1,5 +1,3 @@
-
-
 package com.ray.ideaplugin.linemark;
 
 import com.intellij.codeInsight.daemon.GutterIconNavigationHandler;
@@ -9,11 +7,10 @@ import com.intellij.openapi.editor.markup.GutterIconRenderer;
 import com.intellij.pom.Navigatable;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
-import com.intellij.psi.xml.*;
+import com.intellij.psi.xml.XmlTag;
 import com.intellij.util.Function;
 import com.intellij.util.xml.DomElement;
 import com.intellij.util.xml.DomUtil;
-
 import com.ray.ideaplugin.dom.model.IdDomElement;
 import com.ray.ideaplugin.util.IconsConstants;
 import com.ray.ideaplugin.util.JavaUtils;
@@ -39,18 +36,18 @@ public class MapperXmlLineMarkerProvider implements LineMarkerProvider {
             return null;
         }
         DomElement domElement = DomUtil.getDomElement(element);
-        if (domElement.exists()){
+        if (domElement.exists()) {
             Optional<PsiMethod> psiMethod = JavaUtils.findMethod(element.getProject(), (IdDomElement) domElement);
             return new LineMarkerInfo<PsiElement>(element, element.getTextRange(),
                     this.getIcon(), this.getTooltipProvider(psiMethod),
                     this.getNavigationTarget(psiMethod), GutterIconRenderer.Alignment.CENTER,
-                    ()->"java dao");
+                    () -> "java dao");
         }
         return null;
     }
 
     private Function<? super PsiElement, String> getTooltipProvider(Optional<PsiMethod> psiMethod) {
-        return (Function<PsiElement, String>) psiElement -> "java dao."+psiMethod.get().getName();
+        return (Function<PsiElement, String>) psiElement -> "java dao." + psiMethod.get().getName();
     }
 
 

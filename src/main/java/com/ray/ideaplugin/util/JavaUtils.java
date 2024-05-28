@@ -7,13 +7,14 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.util.PropertyUtil;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.ray.ideaplugin.annotation.Annotation;
-
 import com.ray.ideaplugin.dom.model.IdDomElement;
 import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 
 public final class JavaUtils {
@@ -75,7 +76,7 @@ public final class JavaUtils {
         Optional<PsiClass> clazz = findClazz(project, clazzName);
         if (clazz.isPresent()) {
             PsiMethod[] methods = clazz.get().findMethodsByName(methodName, true);
-            return ArrayUtils.isEmpty(methods)? Optional.empty() : Optional.of(methods[0]);
+            return ArrayUtils.isEmpty(methods) ? Optional.empty() : Optional.of(methods[0]);
         }
         return Optional.empty();
     }
@@ -116,9 +117,6 @@ public final class JavaUtils {
         Optional<PsiAnnotationMemberValue> annotationValue = getAnnotationValue(target, annotation);
         return annotationValue.isPresent() ? Optional.of(annotationValue.get().getText().replaceAll("\"", "")) : Optional.empty();
     }
-
-
-
 
 
 }

@@ -1,6 +1,3 @@
-
-
-
 package com.ray.ideaplugin.linemark;
 
 import com.intellij.codeInsight.daemon.RelatedItemLineMarkerInfo;
@@ -13,7 +10,6 @@ import com.intellij.psi.PsiMethod;
 import com.intellij.psi.xml.XmlTag;
 import com.intellij.util.CommonProcessors;
 import com.intellij.util.xml.DomElement;
-
 import com.ray.ideaplugin.dom.model.IdDomElement;
 import com.ray.ideaplugin.dom.model.Mapper;
 import com.ray.ideaplugin.service.ProjectService;
@@ -61,7 +57,7 @@ public class MapperInterfaceLineMarkerProvider extends RelatedItemLineMarkerProv
                         .create(IconsConstants.SPRING_INJECTION_ICON)
                         .setAlignment(GutterIconRenderer.Alignment.CENTER)
                         .setTargets(tags)
-                        .setTooltipTitle("mapper."+method.getName());
+                        .setTooltipTitle("mapper." + method.getName());
                 result.add(builder.createLineMarkerInfo(method.getNameIdentifier()));
             }
         }
@@ -72,7 +68,7 @@ public class MapperInterfaceLineMarkerProvider extends RelatedItemLineMarkerProv
             CommonProcessors.CollectProcessor<Mapper> processor = new CommonProcessors.CollectProcessor<>();
             ProjectService.getInstance(psiClass.getProject()).process(psiClass, processor);
             Collection<Mapper> results = processor.getResults();
-            if (!results.isEmpty()){
+            if (!results.isEmpty()) {
                 List<XmlTag> tags = results.stream().map(x -> x.getXmlTag()).collect(Collectors.toList());
                 NavigationGutterIconBuilder<PsiElement> builder = NavigationGutterIconBuilder
                         .create(IconsConstants.SPRING_INJECTION_ICON)

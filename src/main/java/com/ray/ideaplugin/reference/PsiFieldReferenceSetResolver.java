@@ -5,7 +5,6 @@ import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.xml.XmlAttributeValue;
-
 import com.ray.ideaplugin.dom.MapperBacktrackingUtils;
 import com.ray.ideaplugin.util.JavaUtils;
 import org.jetbrains.annotations.NotNull;

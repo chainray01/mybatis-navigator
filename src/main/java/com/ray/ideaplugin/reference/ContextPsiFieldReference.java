@@ -10,7 +10,6 @@ import com.ray.ideaplugin.dom.MapperBacktrackingUtils;
 import com.ray.ideaplugin.service.ProjectService;
 import com.ray.ideaplugin.util.JavaUtils;
 import com.ray.ideaplugin.util.MybatisConstants;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

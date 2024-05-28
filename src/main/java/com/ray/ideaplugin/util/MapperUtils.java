@@ -19,12 +19,11 @@ import java.util.Optional;
 
 public final class MapperUtils {
 
+    private static final ImmutableList<Class<? extends MapperParamElement>> TARGET_TYPES = ImmutableList.of(Select.class, Update.class, Insert.class, Delete.class);
+
     private MapperUtils() {
         throw new UnsupportedOperationException();
     }
-
-    private static final ImmutableList<Class<? extends MapperParamElement>> TARGET_TYPES = ImmutableList.of(Select.class, Update.class, Insert.class, Delete.class);
-
 
     public static boolean isElementWithinMybatisFile(@NotNull PsiElement element) {
         PsiFile psiFile = element.getContainingFile();
@@ -36,9 +35,6 @@ public final class MapperUtils {
     public static Collection<Mapper> findMappers(@NotNull Project project) {
         return DomUtils.findDomElements(project, Mapper.class);
     }
-
-
-
 
 
     @SuppressWarnings("unchecked")

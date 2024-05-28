@@ -39,24 +39,6 @@ public class Annotation implements Cloneable {
 
     private Map<String, AnnotationValue> attributePairs;
 
-    public interface AnnotationValue {
-    }
-
-    public static class StringValue implements AnnotationValue {
-
-        private final String value;
-
-        public StringValue(@NotNull String value) {
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return "\"" + value + "\"";
-        }
-
-    }
-
     public Annotation(@NotNull String label, @NotNull String qualifiedName) {
         this.label = label;
         this.qualifiedName = qualifiedName;
@@ -139,6 +121,24 @@ public class Annotation implements Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException();
         }
+    }
+
+    public interface AnnotationValue {
+    }
+
+    public static class StringValue implements AnnotationValue {
+
+        private final String value;
+
+        public StringValue(@NotNull String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "\"" + value + "\"";
+        }
+
     }
 
 }
