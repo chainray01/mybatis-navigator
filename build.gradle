@@ -20,7 +20,7 @@ intellij {
     version.set("2024.1.1")
     type.set("IU") // Target IDE Platform
     pluginName.set("mybatis-navigator")
-    plugins=["DatabaseTools","Spring","com.intellij.java"]
+    plugins=["DatabaseTools","com.intellij.spring","com.intellij.java"]
     updateSinceUntilBuild=false
 }
 group = 'com.ray.ideaplugin'
@@ -34,7 +34,7 @@ tasks {
     patchPluginXml {
         version.set("${project.version}")
         sinceBuild.set("203")
-        untilBuild.set("241.*")
+        untilBuild.set("242.*")
     }
 }
 
